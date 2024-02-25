@@ -6,15 +6,12 @@ def encryption(key,plaintext):
     column_label = str(plaintext)
     jene = df.loc[row_label, column_label]
     return jene
-    # print(f"key{key}")
-    # print(f"text{plaintext}")
-    # print()
 
 def main():
     print("鍵を入力してください。")
-    input_key = list(input().upper()) #ARM
+    input_key = list(input().upper())
     print("平文を入力してください。")
-    input_plaintext = list(input().upper()) #HELLO
+    input_plaintext = list(input().upper())
 
     key_len = len(input_key)
     plaintext_len = len(input_plaintext)
@@ -25,11 +22,11 @@ def main():
         arg_key = input_key[n]
         arg_plaintext = input_plaintext[i]
         result_list.append(encryption(arg_key, arg_plaintext))
-        # encryption(arg_key, arg_plaintext)
         n += 1
         if n == key_len:
             n = 0
     result_str = ''.join(result_list)
     print(result_str)
+
 if __name__ == "__main__":
         main()
